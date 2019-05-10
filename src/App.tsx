@@ -1,3 +1,8 @@
 import React from "react";
 
-export const App: React.FC<{}> = () => <div>Hello world</div>;
+export class App extends React.Component<{}, {}> {
+  handlePress = () => alert("test");
+  render() {
+    return <div onClick={this.handlePress}>Hello world</div>;
+  }
+}
