@@ -18,9 +18,26 @@
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "import/prefer-default-export": 0,
+    "import/no-unresolved": 0,
     "@typescript-eslint/prefer-interface": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
-    "react/destructuring-assignment": [1, "always", { "ignoreClassFields": true }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+    "react/destructuring-assignment": [
+      1,
+      "always",
+      { "ignoreClassFields": true }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ]
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
   }
 }

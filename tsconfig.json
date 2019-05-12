@@ -2,12 +2,13 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
+    "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "preserve"
   },
   "exclude": ["node_modules", "build", "config"],
   "include": ["src"]
