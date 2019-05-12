@@ -1,8 +1,5 @@
-import React from "react";
+import React from 'react'
 
-export class App extends React.Component<{}, {}> {
-  handlePress = () => alert("test");
-  render() {
-    return <div onClick={this.handlePress}>Hello world</div>;
-  }
-}
+type Props = {}
+
+export const App: React.FC<Props> = (): JSX.Element => <div>Hello world</div>

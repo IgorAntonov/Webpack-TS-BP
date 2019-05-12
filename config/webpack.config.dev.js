@@ -1,63 +1,63 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path') // eslint-disable-line
+const HtmlWebpackPlugin = require('html-webpack-plugin') // eslint-disable-line
 
-const ROOT_DIR = path.resolve(__dirname, "../");
+const ROOT_DIR = path.resolve(__dirname, '../')
 
 module.exports = {
-  entry: path.resolve(ROOT_DIR, "src/index.tsx"),
+  entry: path.resolve(ROOT_DIR, 'src/index.tsx'),
   output: {
-    filename: "bundle.js",
-    path: path.resolve(ROOT_DIR, "build"),
-    publicPath: "/"
+    filename: 'bundle.js',
+    path: path.resolve(ROOT_DIR, 'build'),
+    publicPath: '/',
   },
-  mode: "development",
+  mode: 'development',
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
-  devtool: "cheap-module-source-map",
+  devtool: 'cheap-module-source-map',
   devServer: {
-    host: "localhost",
-    port: "3000",
-    contentBase: path.resolve(ROOT_DIR, "public"),
+    host: 'localhost',
+    port: '3000',
+    contentBase: path.resolve(ROOT_DIR, 'public'),
     watchContentBase: true,
-    publicPath: "/",
-    clientLogLevel: "none",
+    publicPath: '/',
+    clientLogLevel: 'none',
     compress: true,
     noInfo: true,
     historyApiFallback: true,
     proxy: {
-      "/api": "http://localhost:5000"
-    }
+      '/api': 'http://localhost:5000',
+    },
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: path.resolve(ROOT_DIR, "node_modules"),
+        exclude: path.resolve(ROOT_DIR, 'node_modules'),
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            cacheDirectory: true
-          }
-        }
+            cacheDirectory: true,
+          },
+        },
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-              limit: 10000
-            }
-          }
-        ]
-      }
-    ]
+              limit: 10000,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(ROOT_DIR, "public/index.html"),
-      inject: true
+      template: path.resolve(ROOT_DIR, 'public/index.html'),
+      inject: true,
     }),
-  ]
-};
+  ],
+}

@@ -1,46 +1,46 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path') // eslint-disable-line
+const HtmlWebpackPlugin = require('html-webpack-plugin') // eslint-disable-line
 
-const ROOT_DIR = path.resolve(__dirname, "../");
+const ROOT_DIR = path.resolve(__dirname, '../')
 
 module.exports = {
-  entry: path.resolve(ROOT_DIR, "src/index.tsx"),
+  entry: path.resolve(ROOT_DIR, 'src/index.tsx'),
   output: {
-    filename: "js/[name].[chunkhash:8].js",
-    path: path.resolve(ROOT_DIR, "build"),
-    publicPath: "/"
+    filename: 'js/[name].[chunkhash:8].js',
+    path: path.resolve(ROOT_DIR, 'build'),
+    publicPath: '/',
   },
-  mode: "production",
+  mode: 'production',
   resolve: {
-    extensions: [".js", ".jsx", ".ts", '.tsx', ".json"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: path.resolve(ROOT_DIR, "node_modules"),
+        exclude: path.resolve(ROOT_DIR, 'node_modules'),
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
               limit: 10000,
-              name: "media/[name].[hash:8].[ext]"
-            }
-          }
-        ]
-      }
-    ]
+              name: 'media/[name].[hash:8].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(ROOT_DIR, "public/index.html"),
+      template: path.resolve(ROOT_DIR, 'public/index.html'),
       inject: true,
       minify: {
         removeComments: true,
@@ -52,8 +52,8 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
-  ]
-};
+  ],
+}
