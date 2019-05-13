@@ -13,6 +13,12 @@ module.exports = {
   mode: 'production',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    alias: {
+      '@features': path.resolve(ROOT_DIR, 'src/features'),
+      '@core': path.resolve(ROOT_DIR, 'src/core'),
+      '@lib': path.resolve(ROOT_DIR, 'src/lib'),
+      '@ui': path.resolve(ROOT_DIR, 'src/ui'),
+    },
   },
   devtool: 'source-map',
   module: {

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { History } from 'history'
 import { connectRouter } from 'connected-react-router'
 
-import { templateReducer } from '../features/template'
+import { templateReducer } from '@features/template'
 
 export const createRootReducer = (history: History) => // eslint-disable-line
   combineReducers({

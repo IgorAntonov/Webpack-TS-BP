@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
 
+import { TemplateList } from '@features/template'
 import { configureStore } from './store'
-import { TemplateList } from '../features/template'
 
 type Props = {}
 

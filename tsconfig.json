@@ -8,8 +8,15 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@features/*": ["src/features/*"],
+      "@ui/*": ["src/ui/*"],
+      "@lib/*": ["src/lib/*"],
+      "@core/*": ["src/core/*"]
+    }
   },
   "exclude": ["node_modules", "build", "config"],
-  "include": ["src"]
+  "include": ["src"],
 }
