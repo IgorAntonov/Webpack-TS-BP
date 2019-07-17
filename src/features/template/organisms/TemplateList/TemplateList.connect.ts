@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { RootState } from '@core/RootState'
+import { RootState } from 'src/types/RootState'
 import { TemplateList } from './TemplateList'
 import { templateActions } from '../../actions'
 import { getTodos } from '../../selectors'

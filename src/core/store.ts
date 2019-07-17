@@ -3,7 +3,7 @@ import { routerMiddleware } from 'connected-react-router'
 import { History } from 'history'
 
 import { createRootReducer } from './rootReducer'
-import { RootState } from './RootState'
+import { RootState } from '../types/RootState'
 
 export const configureStore = (history: History): Store<RootState> => {
   const composeEnchancers =
